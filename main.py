@@ -27,8 +27,8 @@ if __name__ == "__main__":
     args = get_args()
     model = Makeup(args)
 
-    imgA = np.array(Image.open(args.input))
-    imgB = np.array(Image.open(args.style))
+    imgA = np.array(cv2.imread(args.input))
+    imgB = np.array(cv2.imread(args.style))
     imgB = cv2.resize(imgB, (256, 256))
 
     model.prn_process(imgA)
